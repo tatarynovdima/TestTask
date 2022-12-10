@@ -1,6 +1,7 @@
 package com.gfl.test.Souvenir;
 
 import com.gfl.test.Manufacturer.Manufacturer;
+import com.gfl.test.printConcole;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -13,9 +14,10 @@ public class Souvenir implements Serializable {
     //Дата
     private String producedYear;
     private String producedMonth;
-    private String producedDay;
+
+
     //Стоимость товара
-    private double Price;
+    private double price;
     //Айди сувенира
     private String idSouvenir;
 
@@ -51,20 +53,13 @@ public class Souvenir implements Serializable {
         this.producedMonth = producedMonth;
     }
 
-    public String getProducedDay() {
-        return producedDay;
-    }
-
-    public void setProducedDay(String producedDay) {
-        this.producedDay = producedDay;
-    }
 
     public double getPrice() {
-        return Price;
+        return price;
     }
 
     public void setPrice(double price) {
-        Price = price;
+        this.price = price;
     }
 
     public String getIdSouvenir() {
@@ -77,17 +72,21 @@ public class Souvenir implements Serializable {
 
 
     //Констркутор со всеми параметрами
-    public Souvenir(String souvenirName, Manufacturer manufacturer, String producedYear, String producedMonth, String producedDay, double price, String idSouvenir) {
+    public Souvenir(String souvenirName, Manufacturer manufacturer, String producedYear, String producedMonth, double price, String idSouvenir) {
         this.souvenirName = souvenirName;
         this.manufacturer = manufacturer;
         this.producedYear = producedYear;
         this.producedMonth = producedMonth;
-        this.producedDay = producedDay;
-        Price = price;
+        this.price = price;
         this.idSouvenir = idSouvenir;
     }
 
     public void newSouvenir(){
+        printConcole concole = new printConcole();
+        this.souvenirName = concole.in("Необходимо указать название сувенира");
+        this.producedYear = concole.in("Введите год производства");
+        this.producedMonth = concole.in("Введите месяц производства");
+        this.price = Double.parseDouble(concole.in("Укажите стоимость"));
 
     }
 
@@ -95,16 +94,26 @@ public class Souvenir implements Serializable {
     // переопределеный метод equals() для сравнеиня сложных обьектов
     @Override
     public boolean equals(Object obj) {
-
-
-        return super.equals(obj);
+        if (this == obj){
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Souvenir souvenirs = (Souvenir) obj;
+        return Double.compare(souvenirs.price, price) == 0
+                && Objects.equals(idSouvenir, souvenirs.idSouvenir)
+                && Objects.equals(souvenirName, souvenirs.souvenirName)
+                && Objects.equals(manufacturer, souvenirs.manufacturer)
+                && Objects.equals(producedYear, souvenirs.producedYear)
+                && Objects.equals(producedMonth, souvenirs.producedMonth);
     }
 
 
     //чтобы сравнить два обьекта перепоределяем так же метод hashCode()
     @Override
     public int hashCode() {
-      return Objects.hash(souvenirName,manufacturer,producedYear, producedMonth,producedDay,Price,idSouvenir);
+      return Objects.hash(souvenirName,manufacturer,producedYear, producedMonth,price,idSouvenir);
     }
 
 }

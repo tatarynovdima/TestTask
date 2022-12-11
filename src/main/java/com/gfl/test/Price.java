@@ -1,6 +1,6 @@
 package com.gfl.test;
 
-import com.gfl.test.Souvenir.SouvenirArrayList;
+import com.gfl.test.Souvenir.ArrayListSouvenir;
 import com.gfl.test.Souvenir.SouvenirInfo;
 
 public class Price {
@@ -9,7 +9,7 @@ public class Price {
         String priceTemp = console.in("Укажите цену");
         double price = Double.parseDouble(priceTemp.replace(',','.'));
         System.out.print("\nСписок производителей у которых есть цены на сувениры ниже указанной\n");
-        new SouvenirArrayList().getArrayListSouvenirs().stream()
+        new ArrayListSouvenir().getArrayListSouvenirs().stream()
                 .filter(souvenirs -> souvenirs.getPrice() < price)
                 .forEach(souvenirs -> new SouvenirInfo().infoManufacturer(souvenirs.getManufacturer()));
     }

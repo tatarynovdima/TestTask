@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
 
-public class SouvenirArrayList {
+public class ArrayListSouvenir {
     HashMap<String, ArrayList<Souvenir>> map;
     private ArrayList<Souvenir> list = new ArrayList<>();
 

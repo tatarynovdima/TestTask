@@ -1,14 +1,11 @@
 package com.gfl.test.Souvenir;
 
-
-
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class SaveSouvenirCatalog {
-
     private String fileName;
     private String year;
     private String month;
@@ -19,7 +16,7 @@ public class SaveSouvenirCatalog {
         this.addSouvenirs = souvenirs;
     }
 
-    public void SaveCatalogSouvenirs(Souvenir souvenirs) {
+    public SaveSouvenirCatalog(Souvenir souvenirs) {
         setAddElementCatalog(souvenirs);
     }
 
@@ -34,7 +31,7 @@ public class SaveSouvenirCatalog {
     }
 
 
-    private void snapShot () throws RuntimeException {
+    private void snapShot () {
         try (ObjectOutputStream stream = new ObjectOutputStream(new FileOutputStream(this.fileName))) {
             stream.writeObject(this.listSouvenirs);
         } catch (IOException e) {

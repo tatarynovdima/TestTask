@@ -5,8 +5,11 @@ import com.gfl.test.printConcole;
 import java.util.Objects;
 
 public class Manufacturer {
+    //название производителя
     private String manufacturerName;
+    //страна где было производство
     private String country;
+    // айди производителя
     private String idManufacturer;
 
     public String getManufacturerName() {
@@ -35,7 +38,6 @@ public class Manufacturer {
 
     public Manufacturer addNewManufacture () {
 
-        System.out.println("Давайте добавим нового производителя в базу");
         printConcole console = new printConcole();
         this.manufacturerName = console.in("Введите название производителя");
         this.country = console.in("Введите страну производителя");

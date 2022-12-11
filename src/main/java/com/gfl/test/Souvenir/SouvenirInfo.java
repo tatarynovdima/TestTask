@@ -4,6 +4,7 @@ import com.gfl.test.Manufacturer.Manufacturer;
 import lombok.NonNull;
 
 public class SouvenirInfo {
+    //Проверка информации на пустоту чтобы переменная содержала данные и вывод её
     public void infoProduct(@NonNull Souvenir souvenirs) {
         System.out.printf(
                 """
@@ -22,6 +23,8 @@ public class SouvenirInfo {
                 souvenirs.getManufacturer().getManufacturerName()
         );
     }
+
+    //Проверка информации на пустоту чтобы переменная содержала данные и вывод её
     public void infoManufacturer (@NonNull Manufacturer manufacturer){
         System.out.printf("""
                 

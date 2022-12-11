@@ -1,5 +1,6 @@
 package com.gfl.test.Souvenir;
 
+import com.gfl.test.Manufacturer.ElementManufacturer;
 import com.gfl.test.Manufacturer.Manufacturer;
 import com.gfl.test.printConcole;
 
@@ -20,6 +21,10 @@ public class Souvenir implements Serializable {
     private double price;
     //Айди сувенира
     private String idSouvenir;
+
+    public Souvenir() {
+
+    }
 
     public String getSouvenirName() {
         return souvenirName;
@@ -88,6 +93,18 @@ public class Souvenir implements Serializable {
         this.producedMonth = concole.in("Введите месяц производства");
         this.price = Double.parseDouble(concole.in("Укажите стоимость"));
 
+        ElementManufacturer concrete = new ElementManufacturer(
+                concole.in("Введите название производителя"));
+        Manufacturer manufacturerTempCreate = concrete.getManufacturer();
+
+
+        if (manufacturerTempCreate != null){
+            this.manufacturer = manufacturerTempCreate;
+        } else {
+            this.manufacturer = new Manufacturer().addNewManufacture();
+        }
+
+        new SaveSouvenirCatalog(this).addElementCatalog();
     }
 
 

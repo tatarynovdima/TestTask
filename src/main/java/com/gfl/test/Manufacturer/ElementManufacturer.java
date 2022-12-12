@@ -35,7 +35,7 @@ public class ElementManufacturer {
                 concreteManufacturer();
             }
         } else {
-            System.out.println("Производителя с таким названием нет в базе");
+            System.out.println("Производителя с таким названием нет в каталоге");
             this.manufacturer = null;
         }
     }
@@ -57,7 +57,7 @@ public class ElementManufacturer {
         printConcole console = new printConcole();
         int answer = Integer.parseInt(console.in("\nВыберите что то из списка"));
         if (answer == counter + 1){
-            System.out.println("Производителя с таким параметрами нет в базе");
+            System.out.println("Производителя с таким параметрами нет в каталоге");
             this.manufacturer =  null;
         } else {
             this.manufacturer =  listManufacturerTempConcreteManufacturer.get(answer - 1);

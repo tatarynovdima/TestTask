@@ -12,6 +12,7 @@ public class AllSouvenirsFindYear {
 
 
     public AllSouvenirsFindYear() {
+        //Посмотреть сувениры за конкретный год,с помощью лямбды
         this.list = new ArrayListSouvenir().getArrayListSouvenirs();
         this.mapSouvenirs = list.stream().filter(s -> s.getPrice() != 0)
                 .collect(Collectors.groupingBy(Souvenir::getProducedYear));

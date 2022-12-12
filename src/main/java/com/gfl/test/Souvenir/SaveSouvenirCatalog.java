@@ -23,7 +23,7 @@ public class SaveSouvenirCatalog {
     public void addElementCatalog () {
         this.year = this.addSouvenirs.getProducedYear();
         this.month = this.addSouvenirs.getProducedMonth();
-        this.fileName = this.year + this.month + ".dat";
+        this.fileName = this.year + this.month + ".txt";
 
         this.listSouvenirs = NewSouvenirCatalog.getCatalogSouvenirs().get(this.year + this.month);
         this.listSouvenirs.add(this.addSouvenirs);

@@ -9,6 +9,7 @@ import com.gfl.test.Souvenir.Souvenir;
 import lombok.NonNull;
 
 public class Redactor {
+    //
     private printConcole console = new printConcole();
 
     public void editeManufacture () {

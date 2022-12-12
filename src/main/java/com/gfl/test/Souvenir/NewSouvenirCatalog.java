@@ -20,7 +20,7 @@ public class NewSouvenirCatalog {
     }
 
     private void setFileName() {
-        this.fileName = this.year + this.month + ".dat";
+        this.fileName = this.year + this.month + ".txt";
     }
 
 

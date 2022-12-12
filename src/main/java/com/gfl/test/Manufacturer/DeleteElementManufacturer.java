@@ -13,13 +13,14 @@ public class DeleteElementManufacturer {
     }
 
     private void createElementManufacturerToDelete() {
-        ElementManufacturer concreteElementManufacturer =
-                new ElementManufacturer(this.nameManufacturer);
+        //Создаем элемент который нужно удалить
+        ElementManufacturer concreteElementManufacturer = new ElementManufacturer(this.nameManufacturer);
         concreteManufacturer = concreteElementManufacturer.getManufacturer();
     }
 
     public boolean deleteManufacturer () {
         if (concreteManufacturer != null) {
+            //удаляем данные о производители
             new DeleteElementSouvenire().deleteManufactureSouvenirs(concreteManufacturer);
             new CatalogManufacturer().deleteElementCatalogManufacture(concreteManufacturer);
             // Добавить ссылку на метод проверяющий наличие элемента в базе с развветвлением ифов

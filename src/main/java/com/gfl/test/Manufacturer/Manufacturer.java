@@ -49,8 +49,12 @@ public class Manufacturer {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Manufacturer that = (Manufacturer) o;
         return Objects.equals(manufacturerName, that.manufacturerName) && Objects.equals(country, that.country);
     }

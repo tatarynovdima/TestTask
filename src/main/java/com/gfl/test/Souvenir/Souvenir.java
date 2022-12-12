@@ -86,6 +86,8 @@ public class Souvenir implements Serializable {
         this.idSouvenir = idSouvenir;
     }
 
+
+    //Добавление нового сувенира
     public void newSouvenir(){
         printConcole concole = new printConcole();
         this.souvenirName = concole.in("Необходимо указать название сувенира");

@@ -21,6 +21,7 @@ public class SaveSouvenirCatalog {
     }
 
     public void addElementCatalog () {
+        //добавляем информацию о дате в файл
         this.year = this.addSouvenirs.getProducedYear();
         this.month = this.addSouvenirs.getProducedMonth();
         this.fileName = this.year + this.month + ".txt";
@@ -32,9 +33,11 @@ public class SaveSouvenirCatalog {
 
 
     private void snapShot () {
+        //записываем лист сувениров с помощью метода writeObject
         try (ObjectOutputStream stream = new ObjectOutputStream(new FileOutputStream(this.fileName))) {
             stream.writeObject(this.listSouvenirs);
         } catch (IOException e) {
+            //если не получилось записать бросаем исключение
             throw new RuntimeException(e);
         }
     }

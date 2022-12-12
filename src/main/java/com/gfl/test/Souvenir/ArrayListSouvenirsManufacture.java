@@ -4,7 +4,7 @@ import com.gfl.test.Manufacturer.Manufacturer;
 
 import java.util.ArrayList;
 
-public class ArrayListSouvenirsConcreteManufacture {
+public class ArrayListSouvenirsManufacture {
     public ArrayList<Souvenir> returnArrayListSouvenirsConcreteManufacture (Manufacturer manufacturer){
         ArrayList<Souvenir> arrayListSouvenirsTemp = new ArrayList<>();
         new ArrayListSouvenir().getArrayListSouvenirs().stream()

@@ -6,7 +6,8 @@ public class printConcole {
         return scanner(massage);
     }
 
-    private String scanner (String massage) {
+    private String scanner(String massage) {
+        //Бесконечный цикл пока не будет введена команда или текст на консоль
         while (true) {
             System.out.println(massage);
             //Создаем обьект Scanner

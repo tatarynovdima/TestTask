@@ -38,25 +38,25 @@ public class Menu {
                     new Souvenir().newSouvenir();
                     break;
                 case "2":
-                    new Redactor().editeSouvenirs();
+                    new Redactor().editSouvenirs();
                     break;
                 case "3":
-                    new InformerAllInfo().viewAllManufacturer();
+                    new AllInfo().viewAllManufacturer();
                     break;
                 case "4":
-                    new InformerAllInfo().viewAllSouvenirs();
+                    new AllInfo().viewAllSouvenirs();
                     break;
                 case "5":
-                    new InformerManufacturerSouvenirs().viewInfoAllManufacturerSouvenirs();
+                    new ManufacturerSouvenirsInfo().viewInfoAllManufacturerSouvenirs();
                     break;
                 case "6":
-                    new InformerCountry().country();
+                    new InfoCountry().country();
                     break;
                 case "7":
                     new Price().price();
                     break;
                 case "8":
-                    new InformerAllManufacturerAndSouvenirs().viewInfoAllManufacturer();
+                    new ManufacturerSouvenirsInfoAll().viewInfoAllManufacturer();
                     break;
                 case "9":
                     new ArrayListSouvenirsYear().Method();
@@ -72,7 +72,7 @@ public class Menu {
                     new Manufacturer().addNewManufacture();
                     break;
                 case "13":
-                    new Redactor().editeManufacture();
+                    new Redactor().editManufacture();
                     break;
                 case "14":
                     this.closedProgram = true;

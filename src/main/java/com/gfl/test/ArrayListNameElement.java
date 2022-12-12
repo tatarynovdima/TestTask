@@ -7,6 +7,7 @@ import lombok.NonNull;
 import java.util.ArrayList;
 
 public class ArrayListNameElement {
+    //Проверяем на пустоту лист, если лист не пустой выводим имя сувениров
     @NonNull
     public ArrayList<String> returnArrayListNameSouvenir (@NonNull String nameSouvenir) {
         ArrayList<String> list = new ArrayList<>();
